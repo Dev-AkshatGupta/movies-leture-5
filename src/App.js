@@ -46,7 +46,10 @@ export default function App() {
   }
   return (
     <div className="App container">
-      <h1> 🎞️ Movies recommender</h1>
+      <h1>
+        {" "}
+        <span role="img"> 🎞️ </span>Movies recommender
+      </h1>
       <p>I m recommending you some of my favourites movies</p>
       <div className="container">
         {moviesDB.map(function (genre) {
@@ -64,7 +67,7 @@ export default function App() {
       <ul className="list">
         {moviesDataBase[selectedGenre].map(function (movies) {
           return (
-            <li className="list-item">
+            <li key={movies.name} className="list-item">
               <div style={{ fontSize: "larger" }}> {movies.name} </div>
               <div style={{ fontSize: "smaller" }}> {movies.rating} </div>
             </li>
